@@ -2,36 +2,52 @@
 ## basic ideas
 - each panel can be loaded anywhere, and if it's a popup, it will have an [X] btn, and after changes have been made, a [:rotate-left:] btn to undo the change is added to the left of the [X]; then, upon clicking the [:rotate-left:] undo btn, it will change to [:rotate-right:] redo btn)
 	- as an example, the (KE) will be loaded below the (OSK), but can also be loaded in a popup windows
-- each interface is another layer (popup on popup action), because for example, when clicking on a key in the (OSK), it'll popup the (KE), upon which I could select a macro, then press [edit] which brings up the (ME). changes automatically save, so there's no need to worry how many UI layers high the user gets.
-- one main experience panel (no sidebar) which, for example:
-	- (IUE) which shows/allows for connectivity
-		- if not connected via RF/wire, show alert saying it's necessary, else automatically connect.
-		- if first time, or no keyboard is found (NUE) "get setup"
-		- once connected, (LE) is shown always
-		- [settings] brings up (SP) 
-		- [help] brings up (HP)
+- each btn either pushes/pops a layer on the stack, or modifies the active layer
+	- something like a scrollbar is for y-axis: this is z-axis ability to show below layers
+	- if there is [redo] {action} states, automatically create a branch
+	- since changes automatically save, closing the layer isn't distructive because [undo] (ctrl+z) opens the layer back up where it was.
+	- for example, when clicking on a key in the (OSK), it'll popup the (KE), upon which I could select a macro, then press [edit] which brings up the (ME).
+- one main experience panel (no sidebar, just (CI)) which, can exist in different places in each experience
+	- idea is to make it a full-screen experience, thereby focusing the user
 - the main experience panel can only be changed by user action (which ensures everything is saved before anything happens)
-- each popup panel has [undo] [redo] [X] to the left. [undo] and [redo] only show up when there's something to undo/redo (if nothing to redo, there remains the space)
+- each popup panel has [undo] [redo] [X] to the left.
+	- [undo] and [redo] only show up when there's something to undo/redo (if nothing to redo, the space remains there)
+	- [X] unconditionally closes the panel. if I reopen the panel, the [undo] [redo] btn is in same state (corresponding to my current {action} position)
 - only non-interactive items like text/images get scrollbars.
-	- all interactive elements should be visible (ie, for long forms, split the form into logical chunks and make it easy to go from one chunk to the next (swipe/arrows left/right))
-- all undo/redo actions *highlight* in some way the setting that was changed (sroll to item in list)
-	- highlight probably by putting a border around the setting/part that changed, which fades out in .5-1s or so.
+	- all interactive elements (not inside of a list) should be visible (ie, for long forms, split the form into logical chunks and make it easy to go from one chunk to the next (swipe/arrows left/right))
+- all undo/redo actions *highlight* in some way the setting that was changed (sroll to item in list or whatever)
+	- highlight probably by putting a color border/background around the setting/part that changed, which fades out in .5-1s or so.
 	- just so visually I can easily see what changed
-- buttons should not move around after an action
+- btns should not move around after an action
 	- this is hard for the brain to process what just happened
 	- for example, after pressing [undo], it should not move to the left because the [redo] btn was unhidden.
-- no greyed out or disabled buttons.
+- no greyed out or disabled btns.
 	- this is extra work for the brain to process: first it looks like an option, then it doesn't look like an option.
-	- just hide the button (leaving the space where it was blank)
+	- instead of disabling, just hide the btn (causing no reflow, leaving the space where it was blank)
 
 ## interface walkthrogh
-### common interface
+### common experience interface (CEI)
 located at the bottom, or some place out of the way in the main user experience
 - select keyboard (only if there is more than one connected)
 - [settings](SP)
 - battery levels
-- [action panel](AP)
+- [action panel](AP) (perhaps displayed between [undo]/[redo])
 - [layout analyzer](LA) (if turned on)
+
+### common layer interface (CLI)
+aligned usually to the right/left side of the top/bottom part of popup/layer (depending on win/mac/pref)
+- all layers are fullscreen panels
+- [X/] [undo/redo/] [redo/undo/] [X/]
+
+### common panel interface (CPI)
+no resizing or changing at the moment, but *maybe* the option to edit the open panel (maybe w/ a hover border) and the ability to move it around within the layer/popup
+- [X/] [undo/redo/] [redo/undo/] [X/]
+- positions could be editble:
+	- allows for custom dashboards (think )
+	- positions as absolute/relative values to another panel/screen edge (ie, `screen.w + 40` or `panels.macro_editor.x - 20`)
+- this option requires more thought:
+	- quite an interesting idea considering editing stats or adding dashboards.
+	- disability options like text size changing or panel reading (cause custom kbds for the disabled is also a potential market)
 
 ### initial user experience (IUE)
 - if not connected via RF/wire, show alert saying it's necessary, else automatically connect.
@@ -65,7 +81,7 @@ located at the bottom, or some place out of the way in the main user experience
 ### key editor (KE)
 - when panel pops up, it should have the key/super/macro selected that it already is.
 - no need the modifiers panel; simply allow the modifiers on the kbd screen to be toggleable, and if only one one modifier key is toggled, then that is it's "key" (ex. if I press 'k' and then press 'shift', then that's "shift+k" for the "selected value", and then if I now press 'l', then shift stays lit and "selected value" becomes "shift+l")
-- below the keyboard layout panel should be the (SE) panel, which by default will have the tap box highlighted (perhaps with a border and different background color). as each mode is selected (1t,1t1h,2t,2t2h,etc), it will change the highlighted keys on the on-screen kbd accordingly (and for macros and other types, show the appropriate screen: for macros a simplified view with an edit button which loads the (ME) above).
+- below the keyboard layout panel should be the (SE) panel, which by default will have the tap box highlighted (perhaps with a border and different background color). as each mode is selected (1t,1t1h,2t,2t2h,etc), it will change the highlighted keys on the on-screen kbd accordingly (and for macros and other types, show the appropriate screen: for macros a simplified view with an edit btn which loads the (ME) above).
 
 ### superkeys editor (SE)
 
@@ -108,7 +124,7 @@ this panel is just a list of actions where I can visually see what changes I've 
 
 ### buttons/actions
 #### [X]
-- close button (all changes are automatically saved)
+- close the layer (all changes are automatically saved)
 
 #### [undo]
 - :rotate-left: icon.
