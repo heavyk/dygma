@@ -38,6 +38,8 @@ located at the bottom, or some place out of the way inside each main user experi
 aligned usually to the right/left side of the top/bottom part of popup/layer (depending on win/mac/pref)
 - all layers are fullscreen panels
 - [X/] [undo/redo/] [redo/undo/] [X/]
+- esc closes layer
+- (maybe) right-click on non-interactive area closes layer (nav back?)
 
 ### common panel interface (CPI)
 no resizing or changing at the moment, but *maybe* the option to edit the open panel (maybe w/ a hover border) and the ability to move it around within the layer/popup
@@ -68,6 +70,10 @@ no resizing or changing at the moment, but *maybe* the option to edit the open p
 	- all of the layouts submitted to [keyboard layout analyzer](https://patorjk.com/keyboard-layout-analyzer/), can be loaded (for example, I use workman and want to quickly load that configuration).
 	- ability to browse others layouts and download/load any {layout} I want to try.
 - ability to "move" (by dragging) the key from one location to another, swapping the two keys
+- right+click should close the (KE) so that my workflow to reassign a bunch of keys is:
+	1. click on key to open (KE)
+	2. select new key in (KE)
+	3. right-click or esc to close (KE), goto #1
 
 ### layout analyzer (LA)
 [keyboard layout analyzer](https://patorjk.com/keyboard-layout-analyzer/) [[src](https://github.com/patorjk/keyboard-layout-analyzer)] is a website that allows the user to analyse their layout compared to text. it's got a lot of good ideas on how to consider analyse the keyboard layout for ergonomic reasons. the distances can be percisely calculated based on the kbd model the user is using.
