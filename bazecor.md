@@ -27,7 +27,7 @@
 
 ## interface walkthrogh
 ### common experience interface (CEI)
-located at the bottom, or some place out of the way in the main user experience
+located at the bottom, or some place out of the way inside each main user experience
 - select keyboard (only if there is more than one connected)
 - [settings](SP)
 - battery levels
@@ -43,7 +43,7 @@ aligned usually to the right/left side of the top/bottom part of popup/layer (de
 no resizing or changing at the moment, but *maybe* the option to edit the open panel (maybe w/ a hover border) and the ability to move it around within the layer/popup
 - [X/] [undo/redo/] [redo/undo/] [X/]
 - positions could be editble:
-	- allows for custom dashboards (think )
+	- allows for custom dashboards (for stats, etc.)
 	- positions as absolute/relative values to another panel/screen edge (ie, `screen.w + 40` or `panels.macro_editor.x - 20`)
 - this option requires more thought:
 	- quite an interesting idea considering editing stats or adding dashboards.
@@ -73,7 +73,7 @@ no resizing or changing at the moment, but *maybe* the option to edit the open p
 [keyboard layout analyzer](https://patorjk.com/keyboard-layout-analyzer/) [[src](https://github.com/patorjk/keyboard-layout-analyzer)] is a website that allows the user to analyse their layout compared to text. it's got a lot of good ideas on how to consider analyse the keyboard layout for ergonomic reasons. the distances can be percisely calculated based on the kbd model the user is using.
 - ability to turn enable/disable the real-time analyser, which essentially logs keystrokes as {action}s
 	- perhaps configurale, like for example when I load DOTA or something, or during certain times of day, or maybe *not* in password boxes
-	- this feature could potentially lead to a security-related scandal, which is good for advertising
+	- this feature could potentially lead to a security-related scandal, which is good for publicity
 - ability to then generate distance and heatmaps for keys pressed over various periods of history
 - ability to suggest improvements to the keys (ie, swap these keys to decrease lateral/vertical movement)
 - statistics showing distance traveled over a period of time (by replaying {actions}) key usage, etc. (many things possible)
@@ -86,6 +86,19 @@ no resizing or changing at the moment, but *maybe* the option to edit the open p
 ### superkeys editor (SE)
 
 ### macro editor (ME)
+
+### LED editor (LE)
+- ability to see the different LED settings
+	- these are modifiers to the layer colors, like the rainbow gradient in default 2nd LED effect
+	- +add/remove settings and assign to layers/events
+	- (needs more thought because I know the layers have key colors already)
+- the gradient effects are cool, cause they're like kbd-wide lighting (not individual keys), so it'd be cool to show a shadow of the kbd, w/ point light sources, and a keyframe editor so I can change the position of the point lights and their color
+	- tween settings between keyframes so, prolly a simple bezier curve with 2-3 controls to change transition shape
+	- also ability to integrate individual key colors with the background effect.
+- eventually it'd be cool to have event-driven responces, like play an effect when a key is pressed or a layer is changed, or a js rpc function is called
+	- for example the game says the powerup is fully charged, so pulse the bg color
+	- or, server is done doing something (or any other *-priority notification), the event can be activated by rpc
+	- or when I press a key, I want the key to "splash" out in a radial effect like ripples on a pond (dimming the farther away from the keypress it goes)
 
 ### settings panel (SP)
 
