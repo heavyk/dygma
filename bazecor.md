@@ -77,6 +77,8 @@ no resizing or changing at the moment, but *maybe* the option to edit the open p
 - ability to then generate distance and heatmaps for keys pressed over various periods of history
 - ability to suggest improvements to the keys (ie, swap these keys to decrease lateral/vertical movement)
 - statistics showing distance traveled over a period of time (by replaying {actions}) key usage, etc. (many things possible)
+- show common repeteated actions
+- select events and convert into a macro
 
 ### key editor (KE)
 - when panel pops up, it should have the key/super/macro selected that it already is.
@@ -84,6 +86,8 @@ no resizing or changing at the moment, but *maybe* the option to edit the open p
 - below the keyboard layout panel should be the (SE) panel, which by default will have the tap box highlighted (perhaps with a border and different background color). as each mode is selected (1t,1t1h,2t,2t2h,etc), it will change the highlighted keys on the on-screen kbd accordingly (and for macros and other types, show the appropriate screen: for macros a simplified view with an edit btn which loads the (ME) above).
 
 ### superkeys editor (SE)
+- (maybe) if adding a plain key, the hold should by added by default as well
+	- ex. I put dominique's super tab demo, but it made alt+tab inconsistent: I had to put tab on both tap and hold and shift+tab on 2tap and 2tap&hold for alt+tab to work properly again
 
 ### macro editor (ME)
 - ability to play the macro (test it)
@@ -113,6 +117,11 @@ no resizing or changing at the moment, but *maybe* the option to edit the open p
 	- or, server is done doing something (or any other *-priority notification), the event can be activated by rpc
 	- or when I press a key, I want the key to "splash" out in a radial effect like ripples on a pond (dimming the farther away from the keypress it goes)
 
+### tryout panel (TP)
+- textbox or something that captures input
+- all events shown in a list so I can see what events the kbd is sending the computer
+	- select events and convert into macro
+
 ### settings panel (SP)
 
 ### actions panel (AP)
@@ -128,7 +137,7 @@ this panel is just a list of actions where I can visually see what changes I've 
 		- undoing back to a previous state, changing a thing, then redoing, creates a new branch
 	- which allows for a lot of cool ideas 
 	- great parts of this interface can be shared with the (ME)
-		- swapping positions of items 
+		- swapping positions of items
 
 ### action sequence {actions}
 - when action list is saved, actions are stored on disk in chains, something like git.
