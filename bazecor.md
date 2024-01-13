@@ -86,6 +86,19 @@ no resizing or changing at the moment, but *maybe* the option to edit the open p
 ### superkeys editor (SE)
 
 ### macro editor (ME)
+- ability to play the macro (test it)
+- should look more like a timeline than a list of events
+	- in code, it's a sequence of events, but a timeline is more intuitive for 
+- easy way to delete an item in the sequence
+	- perhaps below the timeline there is a trash area that appears, so I only nned to drag it downward to delete it
+- sequyential press+release events should be grouped together so they can be seen as text (ie, ["Dygma"] not [d+shift][y][g][m][a])
+	- the interval between keystrokes can be configured (or random within a range)
+- double click in empty space should add an event
+- pause/wait events can be added
+	- it'd be cool to have events that wait to receive an input (and accordingly, take a different branch)
+- preview macro
+	- play back the sequence visually (each keypress popping up) in accordance with timeline (for games and non-text producing macros)
+	- play back the sequence in text editor (for writers/programmers)
 
 ### LED editor (LE)
 - ability to see the different LED settings
