@@ -185,3 +185,12 @@ this panel is just a list of actions where I can visually see what changes I've 
 - usually appears next to [X] when [X] is right-most btn.
 - usually appears to the left of [undo]
 - when pressed, it will hide itself if at top of action sequence
+
+### bugs
+
+- even when saving a new LED colors, the kbd stays turned off and does not "wake up" so I can see the new color (1.3.8,1.2.5)
+- also noticed that the kbd has a lot of problems after windows 10 has woke up from sleeping: (1.3.8,1.2.5)
+	- often times a key remains pressed forever
+		- one time it was unclear which key cause it didn't produce text (like esc or something)
+		- another time it was the 'b' button I pressed right before waking up the system (sleeping again couldn't get it to reproduce)
+	- probably can be fixed by resetting the controller state when getting HID wake event [link](https://forum.microchip.com/s/topic/a5C3l000000M60wEAC/t253178)
