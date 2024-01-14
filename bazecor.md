@@ -54,6 +54,7 @@ no resizing or changing at the moment, but *maybe* the option to edit the open p
 ### initial user experience (IUE)
 - if not connected via RF/wire, show alert saying it's necessary, else automatically connect.
 - if first time, or no keyboard is found [setup] brings up (NUE) (maybe text like "get setup/started (now)")
+- most people will only have one kbd, so no need to show which kbd selector, untill there has been more than one keyboard connected.
 
 ### new user experience (NUE)
 - first show a welcome screen with an option to set dark/light mode and adjust font settings, with an additional link to "getting started" which will have all of the setup and install directions for the user
@@ -65,7 +66,9 @@ no resizing or changing at the moment, but *maybe* the option to edit the open p
 ### layout editor (LE)
 - when clicking on a key, it should pop up a window (KE) that is not fullscreen (like maybe 50-70% wide), and at the top should be an [X] btn which is the same as presssing "diacard changes".
 - all changes should automatically be saved, *always* with an option to undo (probably in code, the saving happens with a slight 1-2s delay, or when the window is switched/closed)
-- most people will only have one kbd, so no need to show which kbd selector, untill there has been more than one keyboard connected.
+- when selecting color mode:
+	- when I select a key, it should highlight the pallete color that it's currently set to.
+	- it'd be nice to have a "paintbrush" and "erase" tool so I can just swipe all of the keys/underglows that I want with that color
 - ability to save/load entire layout
 	- all of the layouts submitted to [keyboard layout analyzer](https://patorjk.com/keyboard-layout-analyzer/), can be loaded (for example, I use workman and want to quickly load that configuration).
 	- ability to browse others layouts and download/load any {layout} I want to try.
@@ -88,6 +91,7 @@ no resizing or changing at the moment, but *maybe* the option to edit the open p
 
 ### key editor (KE)
 - when panel pops up, it should have the key/super/macro selected that it already is.
+- should show the color of the key
 - no need the modifiers panel; simply allow the modifiers on the kbd screen to be toggleable, and if only one one modifier key is toggled, then that is it's "key" (ex. if I press 'k' and then press 'shift', then that's "shift+k" for the "selected value", and then if I now press 'l', then shift stays lit and "selected value" becomes "shift+l")
 - below the keyboard layout panel should be the (SE) panel, which by default will have the tap box highlighted (perhaps with a border and different background color). as each mode is selected (1t,1t1h,2t,2t2h,etc), it will change the highlighted keys on the on-screen kbd accordingly (and for macros and other types, show the appropriate screen: for macros a simplified view with an edit btn which loads the (ME) above).
 
