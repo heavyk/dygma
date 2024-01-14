@@ -69,6 +69,9 @@ no resizing or changing at the moment, but *maybe* the option to edit the open p
 - when selecting color mode:
 	- when I select a key, it should highlight the pallete color that it's currently set to.
 	- it'd be nice to have a "paintbrush" and "erase" tool so I can just swipe all of the keys/underglows that I want with that color
+	- I want to see the color change immediately on the physical kbd, so I can see what it looks like (without having to save)
+		- to avoid doing multiple saves a second, there should be an api to set LEDs to a color temporarily (not saved).
+			- this feature is also useful for notifications and (LE) effects
 - ability to save/load entire layout
 	- all of the layouts submitted to [keyboard layout analyzer](https://patorjk.com/keyboard-layout-analyzer/), can be loaded (for example, I use workman and want to quickly load that configuration).
 	- ability to browse others layouts and download/load any {layout} I want to try.
@@ -91,7 +94,7 @@ no resizing or changing at the moment, but *maybe* the option to edit the open p
 
 ### key editor (KE)
 - when panel pops up, it should have the key/super/macro selected that it already is.
-- should show the color of the key
+- should show the color of the key (and also able to edit it)
 - no need the modifiers panel; simply allow the modifiers on the kbd screen to be toggleable, and if only one one modifier key is toggled, then that is it's "key" (ex. if I press 'k' and then press 'shift', then that's "shift+k" for the "selected value", and then if I now press 'l', then shift stays lit and "selected value" becomes "shift+l")
 - below the keyboard layout panel should be the (SE) panel, which by default will have the tap box highlighted (perhaps with a border and different background color). as each mode is selected (1t,1t1h,2t,2t2h,etc), it will change the highlighted keys on the on-screen kbd accordingly (and for macros and other types, show the appropriate screen: for macros a simplified view with an edit btn which loads the (ME) above).
 
